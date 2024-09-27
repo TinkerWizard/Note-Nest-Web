@@ -20,6 +20,10 @@ export const SignInForm: React.FC<{}> = () => {
         setPassword(event.target.value);
     };
 
+    const handleForgotPassword = () => {
+        navigate('/reset');
+    };
+
     const handleSignUpNavigation = (event: any) => {
         navigate('/');
     };
@@ -58,7 +62,7 @@ export const SignInForm: React.FC<{}> = () => {
         <div>
             {/* Desktop */}
             <div className="d-none d-xl-block d-xxl-block text-light">
-                <div className="d-flex justify-content-center align-items-center flex-column">
+                <div className="d-flex justify-content-center align-items-center flex-column vh-100">
                     <Form className="text-white container" style={{ width: '30%' }}>
                         <Form.Group className="mb-3" controlId="formBasicName">
                             <Form.Label>Username</Form.Label>
@@ -79,14 +83,15 @@ export const SignInForm: React.FC<{}> = () => {
                             <Button variant="primary" type="submit" onClick={handleSubmit}>
                                 Sign In
                             </Button>
-                            <Button variant="" className="text-light" onClick={handleSignUpNavigation}>Create an account</Button>
+                            <Button variant="secondary" className="text-light" onClick={handleSignUpNavigation}>Create an account</Button>
+                            <Button variant="" className="text-light" onClick={handleForgotPassword}>Forgot Password?</Button>
                         </div>
                     </Form>
                 </div>
             </div>
             {/* Mobile */}
             <div className="d-block d-sm-none">
-                <div className="d-flex justify-content-center align-items-center flex-column gap-3">
+                <div className="d-flex justify-content-center align-items-center flex-column gap-3  vh-100">
                     <Form className="container text-white" style={{ width: '90%' }}>
                         <Form.Group className="" controlId="formBasicName">
                             <Form.Label>Username</Form.Label>
@@ -107,7 +112,8 @@ export const SignInForm: React.FC<{}> = () => {
                             <Button variant="primary" type="submit" onClick={handleSubmit}>
                                 Sign Up
                             </Button>
-                            <Button variant="" className="text-light" onClick={handleSignUpNavigation}>Create an account</Button>
+                            <Button variant="secondary" className="text-light" onClick={handleSignUpNavigation}>Create an account</Button>
+                            <Button variant="" className="text-light" onClick={handleForgotPassword}>Forgot Password?</Button>
                         </div>
                     </Form>
                 </div>
