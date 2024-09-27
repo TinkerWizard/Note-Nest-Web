@@ -1,7 +1,6 @@
 import jwt from 'jsonwebtoken';
 
-// const secret = process.env.JWT_SECRET;
-const secret = '4b3e57d1b12e9837c9f7e4a2f9b8e6c7d1e5b9f3a4c8d7f6e2b3c4f5';
+const secret: string = process.env.JWT_SECRET ?? '';
 export const generateToken = (user: { id: string; username: string }) => {
   if (!secret) {
     throw new Error('JWT_SECRET is not defined');
@@ -14,7 +13,6 @@ export const generateToken = (user: { id: string; username: string }) => {
 
 export const verifyToken = (token: string) => {
   if (!secret) {
-    console.log("JWT_SECRET-----------------", secret);
     throw new Error('JWT_SECRET is not defined');
   }
 
