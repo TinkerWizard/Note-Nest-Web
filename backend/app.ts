@@ -1,4 +1,5 @@
 import dotenv from 'dotenv';
+dotenv.config();
 import mongoose from 'mongoose';
 import notesRouter from './Routes/Notes';
 import express, { Request, Response } from 'express';
@@ -6,7 +7,7 @@ import cors from 'cors';
 import userRouter from './Routes/Users';
 import signInRouter from './Routes/SignIn';
 import signUpRouter from './Routes/SignUp';
-dotenv.config();
+import resetRouter from './Routes/Reset';
 
 
 const app = express();
@@ -23,14 +24,11 @@ mongoose.connect('mongodb://localhost:27017/Note-Nest')
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.error(err));
 
-app.get('/', (req: Request, res: Response) => {
-  res.send("You Are El Rata Alada");
-})
-//Use the auth routes
 app.use('/signin', signInRouter);
 
 app.use('/signup', signUpRouter);
 
+app.use('/reset', resetRouter);
 // Use the notes routes
 app.use('/notes', notesRouter);
  
