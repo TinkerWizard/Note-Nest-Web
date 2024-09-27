@@ -59,7 +59,7 @@ export const SignUpForm: React.FC<{}> = () => {
         <div>
             {/* Desktop */}
             <div className="d-none d-xl-block d-xxl-block">
-                <div className="d-flex justify-content-center align-items-center flex-column">
+                <div className="d-flex justify-content-center align-items-center flex-column vh-100">
                     <Form className="container text-white" style={{ width: '30%' }}>
                         <Form.Group className="mb-3" controlId="formBasicName">
                             <Form.Label>Name</Form.Label>
@@ -99,7 +99,7 @@ export const SignUpForm: React.FC<{}> = () => {
 
             {/* Mobile */}
             <div className="d-block d-sm-none">
-                <div className="d-flex justify-content-center align-items-center flex-column">
+                <div className="d-flex justify-content-center align-items-center flex-column  vh-100">
                     <Form className="container text-white" style={{ width: '90%' }}>
                         <Form.Group className="" controlId="formBasicName">
                             <Form.Label>Name</Form.Label>
