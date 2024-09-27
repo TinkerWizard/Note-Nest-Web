@@ -8,7 +8,6 @@ if (!API_KEY) {
   throw new Error('SENDGRID_MAIL_API_KEY environment variable is not defined.');
 }
 
-console.log("API_KEY:", API_KEY);
 sgMail.setApiKey(API_KEY);
 
 export const generateOtp = async (username: string): Promise<string | null> => {
